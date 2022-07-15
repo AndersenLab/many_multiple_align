@@ -14,7 +14,7 @@ dir_path = sys.argv[1]
 path = os.getcwd()
 output_path = "muscle_" + d.strftime("%m%d%y")
 
-os.system("chmod -x /bin/muscle_v5")
+os.system("chmod -x bin/muscle_v5")
 
 print("\nCOPYTING DATA\n")
 os.system("python3 bin/copy_data.py " + dir_path)
@@ -33,7 +33,7 @@ except:
     os.system("rm -r " + output_path)
     os.mkdir(output_path)
 
-print("\RUNNING MUSCLE\n")
+print("\nRUNNING MUSCLE\n")
 for filename in filenames:
     new_name = path + "/output_efa/" + \
     os.path.basename(filename).split(".")[0] + ".efa"
