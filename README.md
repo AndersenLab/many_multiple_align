@@ -1,5 +1,5 @@
 # many_multiple_align
-**many_multiple_align.py** is a simple tool for performing many multiple alignments at once using QUEST (or another Linux OS machine). The program repeatedly calls [Muscle5](https://drive5.com/muscle5/), a widely used multiple sequence alignment algorithm, on all FASTA files found in the input directory.
+**many_multiple_align.py** is a simple tool for quickly performing many multiple sequence alignments at once using QUEST (or another Linux OS machine). The program repeatedly calls [Muscle5](https://drive5.com/muscle5/), a widely used multiple sequence alignment algorithm capable of running on multiple threads, on all FASTA files found in the input directory. **many_multiple_align.py** cannot be run locally on a macOS system.
 ## Installation
 
     git clone https://github.com/AndersenLab/many_multiple_align.git
