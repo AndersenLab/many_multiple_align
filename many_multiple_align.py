@@ -16,7 +16,7 @@ output_path = "muscle_" + d.strftime("%m%d%y")
 
 os.system("chmod +x bin/muscle_v5")
 
-print("\nCOPYTING DATA\n")
+print("\nCOPYING DATA\n")
 os.system("python3 bin/copy_data.py " + dir_path)
 
 filenames = glob.glob(path + "/data/*.fa")
