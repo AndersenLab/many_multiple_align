@@ -1,28 +1,15 @@
-import glob
 import os
 import sys
 from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord
 from Bio.Seq import Seq
 
-path = os.getcwd()
+file_path = sys.argv[1]
+out_path = sys.argv[2]
+
+records = SeqIO.parse(file_path, "fasta")
 try:
-    os.mkdir("output_aln")
+    SeqIO.write(records, out_path, "clustal")
 except:
-    os.system("rm -r output_aln")
-    os.mkdir("output_aln")
-
-filenames = glob.glob(path + "/output_efa/*.efa")
-# print(len(filenames))
-
-for filename in filenames:
-
-    records = SeqIO.parse(filename, "fasta")
-    new_filename = "/".join(filename.split("/")[:-2]) + "/output_aln/" + \
-        (filename.split("/")[-1]).split(".")[0] + ".aln"
-    try:
-        SeqIO.write(records, new_filename, "clustal")
-    except:
-        out = SeqRecord(Seq("A"))
-        out.id = "NO SEQUENCE FOUND"
-        SeqIO.write(out, new_filename, "clustal")
+    out = SeqRecord(Seq("A"))
+    SeqIO.write(out, out_path, "clustal")
