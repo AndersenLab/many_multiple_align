@@ -1,5 +1,5 @@
 # many_multiple_align
-**many_multiple_align.nf** is a pipeline for quickly performing many multiple sequence alignments; **many_multiple_align.nf** can align 100+ FASTA files containing 100+ sequences each in minutes. The program repeatedly calls [Muscle5](https://drive5.com/muscle5/), a widely used multiple sequence alignment algorithm capable of running on multiple threads, on all FASTA files found in the input directory. **many_multiple_align.nf** cannot be run locally on a macOS system.
+**many_multiple_align.nf** is a pipeline for quickly performing many multiple sequence alignments; **many_multiple_align.nf** can perform multiple sequence alignments on 100+ FASTA files containing 100+ sequences each in minutes. The program repeatedly calls [Muscle5](https://drive5.com/muscle5/), a widely used multiple sequence alignment algorithm capable of running on multiple threads, on all FASTA files found in the input directory. **many_multiple_align.nf** cannot be run locally on a macOS system.
 
 ## Installation
 
