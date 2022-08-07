@@ -26,4 +26,4 @@ For smaller tasks, **many_multiple_align.py** can be used in place of **many_mul
     python3 many_multiple_align.py <input_directory_path> -macintel     # Mac OS Intel
     python3 many_multiple_align.py <input_directory_path> -macarm       # Mac OS ARM (M1+)
     
-The output directory will contain three subdirectories. **input_data** contains the original input FASTA files. **alignment** contains multiple sequence alignments in Clustal format. **consensus** contains FASTA files, each containing one consensus sequence for every input FASTA file. **all_consensus.fa** is a FASTA file that contains all consensus sequences.
+The output directory contains three subdirectories. **input_data** contains the original input FASTA files. **alignment** contains multiple sequence alignments in Clustal format. **consensus** contains FASTA files, each containing one consensus sequence for every input FASTA file. **all_consensus.fa** is a FASTA file that contains all consensus sequences.
