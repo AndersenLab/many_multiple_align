@@ -14,7 +14,7 @@ alignment = AlignIO.read(open(file_path), "clustal")
 
 summary_align = AlignInfo.SummaryInfo(alignment)
 
-consensus = summary_align.dumb_consensus()
+consensus = summary_align.dumb_consensus(ambiguous='N')
 
 out_seqrec = SeqRecord(consensus)
 out_seqrec.id = os.path.basename(file_path).split(".")[0] + "_consensus"
