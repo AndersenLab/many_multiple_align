@@ -2,6 +2,7 @@
 date = new Date().format('MMddyy')
 params.in = null
 params.out = projectDir + "/mmalign_${date}"
+params.cons = ""
 
 
 new_dir = file(params.out)
@@ -10,6 +11,8 @@ new_dir.mkdir()
 cleaned_input_dir = new_dir + "/input_data"
 cleaned_input_dir.mkdir()
 
+efa_dir = new_dir + "/alignment_efa"
+efa_dir.mkdir()
 
 aln_dir = new_dir + "/alignment"
 aln_dir.mkdir()
@@ -61,13 +64,13 @@ process align{
 
     base_name = str.split(os.path.basename("${fast}"), ".")[0]
 
-    efa = os.path.join("${workDir}", base_name + ".efa")
+    efa = os.path.join("${efa_dir}", base_name + ".efa")
     aln = os.path.join("${aln_dir}", base_name + ".aln")
     cons = os.path.join("${consensus_dir}", base_name + "_consensus.fa")
 
     os.system("${muscle_path} -super5 ${fast} -output " + efa)
     os.system("python3 ${projectDir}/bin/format_output.py " + efa + " " + aln)
-    os.system("python3 ${projectDir}/bin/make_consensus.py " + aln + " " + cons)
+    os.system("python3 ${projectDir}/bin/make_consensus.py " + efa + " " + cons + " ${params.cons}")
     print("${fast}")
     """
 }
