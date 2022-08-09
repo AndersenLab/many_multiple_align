@@ -10,6 +10,7 @@ from Bio.Align.substitution_matrices import Array
 file_path = sys.argv[1]
 out_path = sys.argv[2]
 
+
 if len(sys.argv) == 4:
     if sys.argv[3] == "dumb":
         dumb_cons = True
@@ -17,8 +18,6 @@ if len(sys.argv) == 4:
         dumb_cons = False
 else:
     dumb_cons = False
-
-
 
 ### params
 threshold = 0.7
@@ -57,8 +56,6 @@ else:
 
     length = len(record_lst[0])
     print(length)
-    num_seqs = len(record_lst)
-    print(num_seqs)
 
     consensus_str = ""
 
@@ -75,6 +72,7 @@ else:
         else:
 
             new_letters = list(filter(lambda x: x != "-", new_letters))
+            print(new_letters)
             
             unique_letters = list(set(new_letters))
 
@@ -82,7 +80,7 @@ else:
             majority_letter = ""
             for letter in unique_letters:
                 if new_letters.count(letter) > majority_count:
-                    if new_letters.count(letter) / num_seqs >= threshold:
+                    if new_letters.count(letter) / len(new_letters) >= threshold:
                         majority_letter = letter
                     else:
                         majority_letter = ambiguous
@@ -94,6 +92,10 @@ else:
 
 
     consensus = Seq(consensus_str)
+
+    # print(consensus)
+
+
     out_seqrec = SeqRecord(consensus)
     out_seqrec.id = os.path.basename(file_path).split(".")[0] + "_consensus"
     out_seqrec.description = out_seqrec.id + \
