@@ -55,7 +55,7 @@ else:
             record_lst.append(record)
 
     length = len(record_lst[0])
-    print(length)
+    # print(length)
 
     consensus_str = ""
 
@@ -72,7 +72,7 @@ else:
         else:
 
             new_letters = list(filter(lambda x: x != "-", new_letters))
-            print(new_letters)
+            # print(new_letters)
             
             unique_letters = list(set(new_letters))
 
