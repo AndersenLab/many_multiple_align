@@ -106,8 +106,8 @@ for filename in filenames:
         os.system("python3 " + os.path.join(path, "bin", "make_consensus.py") + \
             " " + os.path.join(output_path, "alignment_fa", base_name + ".efa") + \
             " " + \
-            os.path.join(output_path, "consensus", base_name + "_consensus.fa")) + \
-            " dumb"
+            os.path.join(output_path, "consensus", base_name + "_consensus.fa") + \
+            " dumb")
     else:
         os.system("python3 " + os.path.join(path, "bin", "make_consensus.py") + \
             " " + os.path.join(output_path, "alignment_fa", base_name + ".efa") + \
