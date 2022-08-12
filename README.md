@@ -51,3 +51,7 @@ The tool **clean_consensus.py** will produce a new FASTA file, **cleaned_all_con
     python3 clean_consensus.py mmalign_MMDDYY/all_consensus.fa
     
 
+## Citation
+Cite this pipeline: [![DOI](https://zenodo.org/badge/514396386.svg)](https://zenodo.org/badge/latestdoi/514396386)
+
+Muscle5: Edgar, RC (2021), MUSCLE v5 enables improved estimates of phylogenetic tree confidence by ensemble bootstrapping, bioRxiv 2021.06.20.449169. [https://doi.org/10.1101/2021.06.20.449169](https://doi.org/10.1101/2021.06.20.449169).
